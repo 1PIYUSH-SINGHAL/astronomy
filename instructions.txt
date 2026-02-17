@@ -1,0 +1,151 @@
+WELHAM ASTRONOMY CLUB
+PROJECT STRUCTURE INSTRUCTIONS
+(READ BEFORE ADDING OR MOVING FILES)
+
+This document explains how the project folders are organized.
+Do NOT randomly move files. The website depends on this structure.
+
+
+============================================================
+MAIN ASSETS FOLDER
+============================================================
+
+The "assets" folder stores all images and visual media used on the website.
+
+Inside assets, there are organized subfolders.
+Each one has a specific purpose.
+
+
+------------------------------------------------------------
+1) assets/album/
+------------------------------------------------------------
+
+This folder contains:
+
+All astrophotography images taken by club members.
+
+These are the real images shown in:
+- Album page
+- Homepage gallery (latest 9 auto-selected)
+
+If you add a new astrophotography image:
+1. Upload it here.
+2. Then add it to DATA/images.js.
+
+Do NOT store random images here.
+Only official astro photographs belong here.
+
+
+------------------------------------------------------------
+2) assets/icons/about/
+------------------------------------------------------------
+
+This folder contains:
+
+- Club logo
+- School logo
+
+These are used in:
+- About page
+- Header or branding sections
+
+Only official logos should be placed here.
+
+
+------------------------------------------------------------
+3) assets/icons/person/
+------------------------------------------------------------
+
+This folder contains:
+
+- President photo
+- Teacher In-Charge photo
+
+These are used in:
+- About page (leadership section)
+
+Only profile images belong here.
+Do NOT mix with album images.
+
+
+------------------------------------------------------------
+4) assets/icons/resources/telescope/
+------------------------------------------------------------
+
+This folder contains:
+
+Images of telescopes owned by the club.
+
+Used in:
+- Resources page
+
+Only telescope equipment images should be placed here.
+
+
+------------------------------------------------------------
+5) assets/icons/resources/camera/
+------------------------------------------------------------
+
+This folder contains:
+
+Images of cameras used by the club.
+
+Used in:
+- Resources page
+
+Only camera equipment images belong here.
+
+
+------------------------------------------------------------
+6) assets/images/banner/
+------------------------------------------------------------
+
+This folder contains:
+
+Homepage background image(s).
+
+Used in:
+- Home page hero section
+
+These should be:
+- High resolution
+- Dark / space-themed
+- Landscape format
+
+Do NOT store random images here.
+
+
+------------------------------------------------------------
+7) assets/images/gallery/
+------------------------------------------------------------
+
+This folder contains:
+
+Placeholder images only.
+
+These are temporary demo images used for layout testing.
+
+Final astrophotography images should go inside:
+assets/album/
+
+
+============================================================
+IMPORTANT STRUCTURE RULES
+============================================================
+
+- Do NOT rename folders.
+- Do NOT change folder structure.
+- Do NOT mix image types between folders.
+- Always use correct relative paths in DATA files.
+- Keep file names clean (no spaces preferred).
+- Use lowercase file names when possible.
+- Keep file sizes optimized for web use.
+
+If images do not load:
+- Check file path
+- Check spelling
+- Check folder location
+
+============================================================
+END OF STRUCTURE INSTRUCTIONS
+============================================================

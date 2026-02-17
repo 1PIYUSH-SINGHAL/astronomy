@@ -1,133 +1,199 @@
 WELHAM ASTRONOMY CLUB
-DATA STRUCTURE GUIDE
+DATA FOLDER INSTRUCTIONS
+(READ BEFORE EDITING ANY FILE)
 
-This folder contains structured data used across the website.
+This folder controls the content shown on the website.
 
-Files:
-- events.js  → All calendar event data
-- images.js  → All album image data
+If you want to:
+- Add a new event
+- Add a new image
+- Add a new stream
+
+You must edit the correct file inside the DATA folder.
+
+Files in this folder:
+1. events.js   → Controls calendar events
+2. images.js   → Controls album images
+3. streams.js  → Controls live and past streams
+
+Always follow the exact format shown below.
+Do NOT change variable names.
+Do NOT change date formats.
+Do NOT add extra commas.
+
 
 ------------------------------------------------------------
-1) EVENTS DATA STRUCTURE (events.js)
+1) HOW TO ADD OR EDIT A CALENDAR EVENT
+(File: events.js)
 ------------------------------------------------------------
 
-File must attach data to:
+This file starts with:
 
 window.EVENTS_DATA = { ... };
 
-FORMAT:
+Each event is grouped by date.
+
+Correct format:
 
 window.EVENTS_DATA = {
   "YYYY-MM-DD": [
     {
-      title: "Event Title (required)",
-      time: "HH:MM",                 // 24-hour format recommended
-      status: "scheduled" | "completed" | "cancelled" | "weather-risk",
-
-      description: "Optional detailed description",
-      telescope: "Optional telescope used",
-      visibility: "Optional sky condition notes",
-
-      // REQUIRED if status is "cancelled"
-      reason: "Reason for cancellation"
+      title: "Event Title",
+      time: "HH:MM",
+      status: "scheduled"
     }
   ]
 };
 
-IMPORTANT RULES:
+IMPORTANT:
 
-- Date format MUST be: "2026-02-28"
-- Time format should be 24-hour: "23:00"
-- Multiple events on same day go inside the same array
-- If status is "cancelled", include a reason field
-- If status is "completed", do NOT remove it (history matters)
-- Do not duplicate date keys
+- Date must be written as: YYYY-MM-DD
+  Example: 2026-03-15
 
+- Time must be written in 24-hour format:
+  Example: 21:00 (not 9:00 PM)
 
-EXAMPLE:
+- Status must be one of:
+  scheduled
+  completed
+  cancelled
+  weather-risk
 
-window.EVENTS_DATA = {
-  "2026-02-28": [
-    {
-      title: "Alignment of Planets",
-      time: "23:00",
-      status: "scheduled",
-      description: "Planetary alignment observation session.",
-      telescope: "Telescope I"
-    }
-  ],
+If an event is cancelled, you MUST add a reason:
 
-  "2026-03-10": [
-    {
-      title: "Lunar Surface Study",
-      time: "21:00",
-      status: "completed"
-    }
-  ]
-};
+{
+  title: "Mars Observation",
+  time: "22:00",
+  status: "cancelled",
+  reason: "Heavy cloud cover"
+}
+
+Rules:
+- Do NOT delete completed events.
+- Do NOT change the date format.
+- Do NOT repeat the same date key twice.
+- Do NOT leave a comma after the last item.
+
 
 ------------------------------------------------------------
-2) IMAGE DATA STRUCTURE (images.js)
+2) HOW TO ADD OR EDIT AN IMAGE
+(File: images.js)
 ------------------------------------------------------------
 
-File must attach data to:
+This file starts with:
 
 window.ALBUM_DATA = [ ... ];
 
-FORMAT:
+Each image is an item inside the list.
+
+Correct format:
 
 window.ALBUM_DATA = [
   {
     src: "../assets/images/album/image-name.jpg",
-    title: "Image Title (required)",
-    description: "Short description of the capture",
+    title: "Image Title",
+    description: "Short description (1–2 sentences).",
     capturedBy: "Member Name",
     date: "YYYY-MM-DD"
   }
 ];
 
-IMPORTANT RULES:
+Steps to add an image:
 
-- Date format MUST be: "2025-02-14"
-- Image path must be correct relative path
-- Do NOT include trailing commas
-- Each image must be inside the array
-- Titles should be short and clear
-- Descriptions should be 1–2 sentences max
+1. Upload the image to:
+   assets/images/album/
+
+2. Add a new entry like this:
+
+{
+  src: "../assets/images/album/saturn.jpg",
+  title: "Saturn Rings",
+  description: "Clear capture of Saturn's ring system.",
+  capturedBy: "Member Name",
+  date: "2026-03-10"
+}
+
+Rules:
+- Date must be YYYY-MM-DD
+- Image path must be correct
+- Description must be short
+- No extra comma after the last image
+- Newest images automatically appear first
+- Homepage automatically shows the latest 9 images
 
 
-EXAMPLE:
+------------------------------------------------------------
+3) HOW TO ADD OR EDIT A STREAM
+(File: streams.js)
+------------------------------------------------------------
 
-window.ALBUM_DATA = [
+This file starts with:
+
+window.STREAMS_DATA = [ ... ];
+
+Each stream is an item inside the list.
+
+Correct format:
+
+window.STREAMS_DATA = [
   {
-    src: "../assets/images/album/moon1.jpg",
-    title: "Full Moon Detail",
-    description: "High-resolution lunar surface capture.",
-    capturedBy: "Aryan S.",
-    date: "2025-02-14"
-  },
-
-  {
-    src: "../assets/images/album/jupiter.jpg",
-    title: "Jupiter Bands",
-    description: "Captured during optimal atmospheric conditions.",
-    capturedBy: "Rohan M.",
-    date: "2024-11-03"
+    title: "Stream Title",
+    description: "Short description of the stream.",
+    date: "YYYY-MM-DD",
+    youtubeLink: "https://www.youtube.com/watch?v=VIDEO_ID",
+    isLive: true
   }
 ];
 
+Field explanations:
+
+title        → Required
+description  → Required
+date         → Required (YYYY-MM-DD)
+youtubeLink  → Required (full YouTube link)
+isLive       → true or false
+
+If the stream is currently live:
+isLive: true
+
+If it is a past stream:
+isLive: false
+
+Rules:
+- Date must be YYYY-MM-DD
+- YouTube link must be valid
+- Do NOT add thumbnails manually (they are automatic)
+- Multiple streams can be live at the same time
+- Live streams appear in the highlight section
+- Past streams appear in the archive
+- Archive automatically shows:
+  Desktop → 6 per page
+  Phone → 2 per page
+- Streams automatically sort newest first
+
+
 ------------------------------------------------------------
-GENERAL BEST PRACTICES
+GENERAL RULES FOR ALL FILES
 ------------------------------------------------------------
 
-- Keep formatting consistent
-- Always use double quotes
-- Do not remove historical data
-- Validate dates before adding
-- Keep descriptions concise
-- Avoid duplicate entries
-- Check file paths carefully
+- Always use double quotes: " "
+- Do NOT rename:
+  window.EVENTS_DATA
+  window.ALBUM_DATA
+  window.STREAMS_DATA
+- Do NOT add trailing commas
+- Do NOT change the overall structure
+- Always check dates carefully
+- Keep descriptions short and clear
+- Save the file after editing
+
+If something breaks:
+Check for:
+- Missing commas
+- Extra commas
+- Incorrect date format
+- Wrong quotation marks
 
 ------------------------------------------------------------
-END OF GUIDE
+END OF INSTRUCTIONS
 ------------------------------------------------------------
