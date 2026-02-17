@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Album | Welham Astronomy Club</title>
+
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/album.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<header class="site-header">
+  <div class="logo">WELHAM ASTRONOMY CLUB</div>
+  <nav class="nav">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="album.html" class="active">Album</a>
+    <a href="streams.html">Streams</a>
+  </nav>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="album-hero">
+  <div class="album-hero-inner">
+    <h1>Astrophotography Archive</h1>
+    <p>A curated collection of celestial observations captured by our members.</p>
+  </div>
+</section>
+
+<!-- FILTER SECTION -->
+
+<section class="album-filter section">
+
+  <div class="filter-bar">
+
+    <div class="filter-group">
+      <label for="yearFilter">Year</label>
+      <select id="yearFilter">
+        <option value="all">All</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="monthFilter">Month</label>
+      <select id="monthFilter">
+        <option value="all">All</option>
+        <option value="01">January</option>
+        <option value="02">February</option>
+        <option value="03">March</option>
+        <option value="04">April</option>
+        <option value="05">May</option>
+        <option value="06">June</option>
+        <option value="07">July</option>
+        <option value="08">August</option>
+        <option value="09">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY GRID -->
+
+<section class="album-section section">
+
+  <div id="album-grid" class="album-grid">
+    <!-- Images injected via JS -->
+  </div>
+
+</section>
+
+<!-- PAGINATION -->
+
+<section class="album-pagination section">
+
+  <div class="pagination-controls">
+
+    <button id="prevPage">Previous</button>
+
+    <span id="pageIndicator">Page 1</span>
+
+    <button id="nextPage">Next</button>
+
+  </div>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Welham Astronomy Club</p>
+    <p>Observing the cosmos from Dehradun</p>
+  </div>
+</footer>
+
+<script src="../js/index.js"></script>
+<script src="../js/animations.js"></script>
+<script src="../DATA/images.js"></script>
+<script src="../js/album.js"></script>
+
+</body>
+</html>

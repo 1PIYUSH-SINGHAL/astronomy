@@ -1,0 +1,262 @@
+/* ================= HERO ================= */
+
+.album-hero{
+  min-height:75vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:6rem 6%;
+  background:
+  radial-gradient(900px circle at 50% -10%,rgba(88,166,255,.08),transparent 70%);
+}
+
+.album-hero h1{
+  font-size:3rem;
+  font-weight:600;
+  margin-bottom:1rem;
+  letter-spacing:-.5px;
+}
+
+.album-hero p{
+  color:var(--muted);
+  max-width:620px;
+  margin:0 auto;
+}
+
+/* ================= FILTER BAR ================= */
+
+.album-filter{
+  padding:4rem 6%;
+  display:flex;
+  justify-content:center;
+}
+
+.filter-bar{
+  display:flex;
+  gap:3rem;
+  padding:1.5rem 2rem;
+  border-radius:16px;
+  background:rgba(255,255,255,.02);
+  border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+
+.filter-group{
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+}
+
+.filter-group label{
+  font-size:.75rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.filter-group select{
+  background:var(--surface);
+  border:1px solid var(--border);
+  color:var(--text);
+  padding:.6rem 1rem;
+  border-radius:8px;
+  font-size:.85rem;
+  cursor:pointer;
+  transition:border .2s ease;
+}
+
+.filter-group select:hover{
+  border-color:var(--accent);
+}
+
+/* ================= GRID ================= */
+
+.album-section{
+  padding:6rem 6%;
+}
+
+.album-grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+
+/* ================= CARD ================= */
+
+.album-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  cursor:pointer;
+  transition:transform .3s ease,border .3s ease,box-shadow .3s ease;
+}
+
+.album-card:hover{
+  transform:translateY(-8px);
+  border-color:var(--accent);
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+
+.album-image{
+  position:relative;
+  height:260px;
+  overflow:hidden;
+}
+
+.album-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+
+.album-card:hover .album-image img{
+  transform:scale(1.08);
+}
+
+/* ================= OVERLAY ================= */
+
+.album-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.85),
+    rgba(0,0,0,.5) 40%,
+    transparent 70%
+  );
+  opacity:0;
+  transition:opacity .4s ease;
+}
+
+.album-card:hover .album-overlay{
+  opacity:1;
+}
+
+.album-content{
+  position:absolute;
+  bottom:1.5rem;
+  left:1.5rem;
+  right:1.5rem;
+  transform:translateY(20px);
+  opacity:0;
+  transition:transform .4s ease,opacity .4s ease;
+}
+
+.album-card:hover .album-content{
+  transform:translateY(0);
+  opacity:1;
+}
+
+.album-content h3{
+  font-size:1rem;
+  margin-bottom:.5rem;
+}
+
+.album-meta{
+  font-size:.75rem;
+  color:var(--muted);
+  margin-bottom:.5rem;
+}
+
+.album-description{
+  font-size:.8rem;
+  line-height:1.5;
+  color:#d0d6db;
+}
+
+/* ================= PAGINATION ================= */
+
+.album-pagination{
+  padding:4rem 6%;
+  display:flex;
+  justify-content:center;
+}
+
+.pagination-controls{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+}
+
+.pagination-controls button{
+  padding:.6rem 1.5rem;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  cursor:pointer;
+  transition:border .2s ease,transform .2s ease;
+}
+
+.pagination-controls button:hover{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+}
+
+#pageIndicator{
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+  .album-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:720px){
+
+.album-hero{
+  min-height:60vh;
+  padding:4rem 8%;
+}
+
+.album-hero h1{
+  font-size:2rem;
+}
+
+.album-filter{
+  padding:3rem 8%;
+}
+
+.filter-bar{
+  flex-direction:column;
+  gap:1.5rem;
+  width:100%;
+}
+
+.album-section{
+  padding:4rem 8%;
+}
+
+.album-grid{
+  grid-template-columns:1fr;
+  gap:1.5rem;
+}
+
+.album-image{
+  height:220px;
+}
+
+.album-content{
+  transform:translateY(0);
+  opacity:1;
+}
+
+.album-overlay{
+  opacity:1;
+}
+
+.album-pagination{
+  padding:3rem 8%;
+}
+
+}

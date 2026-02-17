@@ -1,119 +1,125 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welham Astronomy Club</title>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/home.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welham Astronomy Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<canvas id="stars"></canvas>
+    <canvas id="stars"></canvas>
 
-<header class="site-header">
-<div class="logo">WELHAM ASTRONOMY CLUB</div>
+    <header class="site-header">
+        <div class="logo">WELHAM ASTRONOMY CLUB</div>
 
-<nav class="nav">
-<a href="index.html" class="active">Home</a>
-<a href="./html/about.html">About</a>
-<a href="./html/resources.html">Resources</a>
-<a href="./html/album.html">Album</a>
-<a href="./html/streams.html">Streams</a>
-</nav>
+        <nav class="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="./html/about.html">About</a>
+            <a href="./html/resources.html">Resources</a>
+            <a href="./html/album.html">Album</a>
+            <a href="./html/streams.html">Streams</a>
+        </nav>
 
-<div class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</header>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
 
-<section class="banner">
-<img src="assets/images/banner/slide1.jpg" alt="Night Sky" class="banner-image">
-<div class="banner-overlay"></div>
-<div class="banner-content">
-<div class="banner-accent"></div>
-<h1>Welham Astronomy Club</h1>
-<p>Observational Astronomy · Astrophotography · Telecasting</p>
-</div>
-</section>
+    <section class="banner">
+        <img src="assets/images/banner/slide1.jpg" alt="Night Sky" class="banner-image">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <div class="banner-accent"></div>
+            <h1>Welham Astronomy Club</h1>
+            <p>Observational Astronomy · Astrophotography · Telecasting</p>
+        </div>
+    </section>
 
-<section class="live-strip">
-<div class="live-inner">
-<div class="live-item" id="live-time"></div>
-<div class="live-item" id="live-moon"></div>
-<div class="live-item" id="live-countdown"></div>
-</div>
-</section>
+    <section class="live-strip">
+        <div class="live-inner">
+            <div class="live-item" id="live-time"></div>
+            <div class="live-item" id="live-moon"></div>
+            <div class="live-item" id="live-countdown"></div>
+        </div>
+    </section>
 
-<section class="newsletter section">
-<span class="newsletter-label">MONTHLY SKY ARCHIVE</span>
-<h2>Receive Our Latest Astrophotography</h2>
-<p>A curated collection of celestial captures and observation logs delivered once a month.</p>
-<form class="newsletter-form">
-<div class="input-group">
-<input type="email" placeholder="Enter your email address" required>
-<button type="submit">Subscribe</button>
-</div>
-</form>
-</section>
+    <section class="newsletter section">
+        <span class="newsletter-label">MONTHLY SKY ARCHIVE</span>
+        <h2>Receive Our Latest Astrophotography</h2>
+        <p>A curated collection of celestial captures and observation logs delivered once a month.</p>
+        <form class="newsletter-form">
+            <div class="input-group">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </div>
+        </form>
+    </section>
 
-<section class="calendar-section section">
-<div class="calendar-header">
-<h2>Observation Schedule</h2>
-<div class="calendar-nav">
-<button id="prevMonth">‹</button>
-<span id="monthLabel"></span>
-<button id="nextMonth">›</button>
-</div>
-</div>
-<div class="calendar-grid" id="calendarGrid"></div>
-<div class="event-panel" id="eventPanel"><p>Select a date to view events.</p></div>
-</section>
+    <section class="calendar-section section">
+        <div class="calendar-header">
+            <h2>Observation Schedule</h2>
+            <div class="calendar-nav">
+                <button id="prevMonth">‹</button>
+                <span id="monthLabel"></span>
+                <button id="nextMonth">›</button>
+            </div>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+        <div class="event-panel" id="eventPanel">
+            <p>Select a date to view events.</p>
+        </div>
+    </section>
 
-<section class="gallery-section section">
-<div class="gallery-header">
-<h2>Astrophotography Showcase</h2>
-<p>Captured by members of the Astronomy Club</p>
-</div>
-<div class="gallery-wrapper">
-<button class="gallery-nav prev">‹</button>
-<div class="gallery-track">
-<div class="gallery-page">
-<img src="assets/images/gallery/jupiter.png" alt="">
-<img src="assets/images/gallery/mars.png" alt="">
-<img src="assets/images/gallery/mercury.jpg" alt="">
-</div>
-<div class="gallery-page">
-<img src="assets/images/gallery/moon.jpeg" alt="">
-<img src="assets/images/gallery/neptune.jpg" alt="">
-<img src="assets/images/gallery/pluto.webp" alt="">
-</div>
-</div>
-<button class="gallery-nav next">›</button>
-</div>
-</section>
+    <section class="gallery-section section">
+        <div class="gallery-header">
+            <h2>Astrophotography Showcase</h2>
+            <p>Captured by members of the Astronomy Club</p>
+        </div>
+        <div class="gallery-wrapper">
+            <button class="gallery-nav prev">‹</button>
+            <div class="gallery-track">
+                <div class="gallery-page">
+                    <img src="assets/images/gallery/jupiter.png" alt="">
+                    <img src="assets/images/gallery/mars.png" alt="">
+                    <img src="assets/images/gallery/mercury.jpg" alt="">
+                </div>
+                <div class="gallery-page">
+                    <img src="assets/images/gallery/moon.jpeg" alt="">
+                    <img src="assets/images/gallery/neptune.jpg" alt="">
+                    <img src="assets/images/gallery/pluto.webp" alt="">
+                </div>
+            </div>
+            <button class="gallery-nav next">›</button>
+        </div>
+    </section>
 
-<section class="quote-section section">
-<div class="quote-inner">
-<blockquote>“Somewhere, something incredible is waiting to be known.”</blockquote>
-<span class="quote-author">— Carl Sagan</span>
-</div>
-</section>
+    <section class="quote-section section">
+        <div class="quote-inner">
+            <blockquote>“Somewhere, something incredible is waiting to be known.”</blockquote>
+            <span class="quote-author">— Carl Sagan</span>
+        </div>
+    </section>
 
-<footer class="site-footer">
-<div class="footer-inner">
-<p>© 2026 Welham Astronomy Club</p>
-<p>Observing the cosmos from Dehradun</p>
-</div>
-</footer>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>© 2026 Welham Astronomy Club</p>
+            <p>Observing the cosmos from Dehradun</p>
+        </div>
+    </footer>
 
-<script src="js/calendar.js"></script>
-<script src="js/index.js"></script>
-<script src="js/gallery.js"></script>
-<script src="js/animations.js"></script>
+    <script src="DATA/events.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/animations.js"></script>
 
 </body>
+
 </html>

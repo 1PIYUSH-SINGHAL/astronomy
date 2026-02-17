@@ -1,0 +1,133 @@
+WELHAM ASTRONOMY CLUB
+DATA STRUCTURE GUIDE
+
+This folder contains structured data used across the website.
+
+Files:
+- events.js  → All calendar event data
+- images.js  → All album image data
+
+------------------------------------------------------------
+1) EVENTS DATA STRUCTURE (events.js)
+------------------------------------------------------------
+
+File must attach data to:
+
+window.EVENTS_DATA = { ... };
+
+FORMAT:
+
+window.EVENTS_DATA = {
+  "YYYY-MM-DD": [
+    {
+      title: "Event Title (required)",
+      time: "HH:MM",                 // 24-hour format recommended
+      status: "scheduled" | "completed" | "cancelled" | "weather-risk",
+
+      description: "Optional detailed description",
+      telescope: "Optional telescope used",
+      visibility: "Optional sky condition notes",
+
+      // REQUIRED if status is "cancelled"
+      reason: "Reason for cancellation"
+    }
+  ]
+};
+
+IMPORTANT RULES:
+
+- Date format MUST be: "2026-02-28"
+- Time format should be 24-hour: "23:00"
+- Multiple events on same day go inside the same array
+- If status is "cancelled", include a reason field
+- If status is "completed", do NOT remove it (history matters)
+- Do not duplicate date keys
+
+
+EXAMPLE:
+
+window.EVENTS_DATA = {
+  "2026-02-28": [
+    {
+      title: "Alignment of Planets",
+      time: "23:00",
+      status: "scheduled",
+      description: "Planetary alignment observation session.",
+      telescope: "Telescope I"
+    }
+  ],
+
+  "2026-03-10": [
+    {
+      title: "Lunar Surface Study",
+      time: "21:00",
+      status: "completed"
+    }
+  ]
+};
+
+------------------------------------------------------------
+2) IMAGE DATA STRUCTURE (images.js)
+------------------------------------------------------------
+
+File must attach data to:
+
+window.ALBUM_DATA = [ ... ];
+
+FORMAT:
+
+window.ALBUM_DATA = [
+  {
+    src: "../assets/images/album/image-name.jpg",
+    title: "Image Title (required)",
+    description: "Short description of the capture",
+    capturedBy: "Member Name",
+    date: "YYYY-MM-DD"
+  }
+];
+
+IMPORTANT RULES:
+
+- Date format MUST be: "2025-02-14"
+- Image path must be correct relative path
+- Do NOT include trailing commas
+- Each image must be inside the array
+- Titles should be short and clear
+- Descriptions should be 1–2 sentences max
+
+
+EXAMPLE:
+
+window.ALBUM_DATA = [
+  {
+    src: "../assets/images/album/moon1.jpg",
+    title: "Full Moon Detail",
+    description: "High-resolution lunar surface capture.",
+    capturedBy: "Aryan S.",
+    date: "2025-02-14"
+  },
+
+  {
+    src: "../assets/images/album/jupiter.jpg",
+    title: "Jupiter Bands",
+    description: "Captured during optimal atmospheric conditions.",
+    capturedBy: "Rohan M.",
+    date: "2024-11-03"
+  }
+];
+
+------------------------------------------------------------
+GENERAL BEST PRACTICES
+------------------------------------------------------------
+
+- Keep formatting consistent
+- Always use double quotes
+- Do not remove historical data
+- Validate dates before adding
+- Keep descriptions concise
+- Avoid duplicate entries
+- Check file paths carefully
+
+------------------------------------------------------------
+END OF GUIDE
+------------------------------------------------------------

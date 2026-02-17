@@ -1,27 +1,4 @@
-const events = {
-  "2026-02-28": [
-    { title: "Alignment of planets", time: "23:00", status: "scheduled" },
-  ],
-};
-
-/*
-EVENT OBJECT FORMAT
-
-events = {
-  "YYYY-MM-DD": [
-    {
-      title: "Event title (required)",
-      time: "HH:MM",
-      status: "scheduled" | "weather-risk" | "cancelled" | "completed",
-
-      reason: "Required if cancelled",
-      description: "Optional longer description",
-      telescope: "Optional equipment used",
-      visibility: "Optional visibility notes"
-    }
-  ]
-}
-*/
+const events = window.EVENTS_DATA || {};
 
 let currentDate = new Date();
 const today = new Date();
