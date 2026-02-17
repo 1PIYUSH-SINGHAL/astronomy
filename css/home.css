@@ -664,3 +664,9 @@ padding:.2rem .6rem;
 }
 
 }
+
+@media(max-width:720px){
+  .banner-image{
+    animation:none;
+  }
+}
