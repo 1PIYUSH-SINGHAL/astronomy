@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welham Astronomy Club</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<header class="site-header">
+  <div class="logo">WELHAM ASTRONOMY CLUB</div>
+  <nav class="nav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Resources</a>
+    <a href="#">Album</a>
+    <a href="#">Streams</a>
+  </nav>
+</header>
+
+<section class="banner">
+  <img src="assets/images/banner/slide1.jpg" alt="Night Sky" class="banner-image">
+  <div class="banner-overlay"></div>
+
+  <div class="banner-content">
+    <div class="banner-accent"></div>
+    <h1>Exploring the Universe</h1>
+    <p>Observational Astronomy · Astrophotography · Telecasting</p>
+  </div>
+
+  <div class="scroll-indicator"><span></span></div>
+</section>
+
+<section class="live-strip">
+  <div class="live-inner">
+    <div class="live-item" id="live-time"></div>
+    <div class="live-item" id="live-moon"></div>
+    <div class="live-item" id="live-countdown"></div>
+  </div>
+</section>
+
+<section class="newsletter section">
+  <span class="newsletter-label">MONTHLY SKY ARCHIVE</span>
+  <h2>Receive Our Latest Astrophotography</h2>
+  <p>A curated collection of celestial captures and observation logs delivered once a month.</p>
+
+  <form class="newsletter-form">
+    <div class="input-group">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+    </div>
+  </form>
+</section>
+
+<section class="calendar-section section">
+  <div class="calendar-header">
+    <h2>Observation Schedule</h2>
+    <div class="calendar-nav">
+      <button id="prevMonth">‹</button>
+      <span id="monthLabel"></span>
+      <button id="nextMonth">›</button>
+    </div>
+  </div>
+
+  <div class="calendar-grid" id="calendarGrid"></div>
+
+  <div class="event-panel" id="eventPanel">
+    <p>Select a date to view events.</p>
+  </div>
+</section>
+
+<script src="js/calendar.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
