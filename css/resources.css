@@ -1,0 +1,250 @@
+/* ================= HERO ================= */
+
+.resources-hero{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:6rem 6%;
+  background:
+  radial-gradient(900px circle at 50% -10%,rgba(88,166,255,.08),transparent 70%);
+}
+
+.resources-hero h1{
+  font-size:3rem;
+  font-weight:600;
+  margin-bottom:1rem;
+  letter-spacing:-.5px;
+}
+
+.resources-hero p{
+  color:var(--muted);
+  max-width:600px;
+  margin:0 auto;
+}
+
+/* ================= SECTION ================= */
+
+.resources-section{
+  padding:8rem 6%;
+}
+
+.equipment-grid{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:4rem;
+}
+
+/* ================= CARD ================= */
+
+.equipment-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+  padding:3rem;
+  border-radius:16px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  transition:transform .25s ease,border .25s ease;
+}
+
+.equipment-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent);
+}
+
+.equipment-image{
+  overflow:hidden;
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+
+.equipment-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .3s ease;
+}
+
+.equipment-card:hover .equipment-image img{
+  transform:scale(1.05);
+}
+
+.equipment-content h3{
+  font-size:1.5rem;
+  margin-bottom:1rem;
+}
+
+.equipment-content p{
+  color:var(--muted);
+  margin-bottom:1.2rem;
+  line-height:1.7;
+}
+
+.equipment-content ul{
+  list-style:none;
+  padding:0;
+}
+
+.equipment-content li{
+  margin-bottom:.6rem;
+  font-size:.9rem;
+  color:var(--muted);
+  position:relative;
+  padding-left:1rem;
+}
+
+.equipment-content li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.6rem;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--accent);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+.equipment-card{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+.equipment-content{
+  order:2;
+}
+
+.equipment-image{
+  order:1;
+}
+
+}
+
+@media(max-width:720px){
+
+.resources-hero{
+  min-height:60vh;
+  padding:4rem 8%;
+}
+
+.resources-hero h1{
+  font-size:2rem;
+}
+
+.resources-section{
+  padding:5rem 8%;
+}
+
+.equipment-card{
+  padding:2rem;
+}
+
+.equipment-content h3{
+  font-size:1.2rem;
+}
+
+}
+
+/* ================= SOFTWARE STACK ================= */
+
+.software-section{
+  padding:8rem 6%;
+  text-align:center;
+  position:relative;
+}
+
+.software-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:120px;
+  height:2px;
+  background:var(--accent);
+  opacity:.3;
+}
+
+.software-grid{
+  max-width:1100px;
+  margin:3rem auto 0 auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2.5rem;
+}
+
+.software-card{
+  position:relative;
+  padding:2.5rem 2.5rem 2.5rem 3rem;
+  border-radius:16px;
+  background:linear-gradient(
+    145deg,
+    var(--surface),
+    rgba(255,255,255,.01)
+  );
+  border:1px solid var(--border);
+  transition:transform .25s ease,border .25s ease,box-shadow .25s ease;
+  text-align:left;
+  overflow:hidden;
+}
+
+/* LEFT ACCENT BAR */
+
+.software-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:var(--accent);
+  opacity:.5;
+  transition:opacity .25s ease;
+}
+
+.software-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent);
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.software-card:hover::before{
+  opacity:1;
+}
+
+.software-card h3{
+  font-size:1.2rem;
+  margin-bottom:.8rem;
+  font-weight:600;
+}
+
+.software-card p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+  .software-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:720px){
+  .software-section{
+    padding:5rem 8%;
+  }
+  .software-card{
+    padding:2rem 2rem 2rem 2.5rem;
+  }
+}

@@ -13,38 +13,6 @@ liveCountdown=document.getElementById("live-countdown");
 
 let scrollYPos=0,ticking=false,currentSectionIndex=0;
 
-/* ================= SMOOTH SCROLL LOOP ================= */
-
-const updateUI=()=>{
-const y=scrollYPos;
-
-if(header){
-header.style.background=y>60?"rgba(13,17,23,0.97)":"linear-gradient(to bottom,rgba(13,17,23,.85),rgba(13,17,23,.4))";
-header.style.backdropFilter=y>60?"blur(10px)":"blur(6px)";
-}
-
-if(scrollIndicator)scrollIndicator.style.opacity=Math.max(0,1-y/250);
-if(banner)banner.style.transform=`translateY(${y*.08}px)`;
-
-for(let i=sections.length-1;i>=0;i--){
-if(y+window.innerHeight*.35>=sections[i].offsetTop){
-if(currentSectionIndex!==i){
-navLinks.forEach(l=>l.classList.remove("active"));
-navLinks[i]&&navLinks[i].classList.add("active");
-currentSectionIndex=i;
-}
-break;
-}
-}
-
-ticking=false;
-};
-
-window.addEventListener("scroll",()=>{
-scrollYPos=window.scrollY;
-if(!ticking){requestAnimationFrame(updateUI);ticking=true;}
-},{passive:true});
-
 /* ================= SECTION REVEAL ================= */
 
 const observer=new IntersectionObserver(e=>{
