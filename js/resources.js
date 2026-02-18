@@ -8,32 +8,32 @@ if(!root)return;
 const equipment=[
 {
 name:"Telescope I",
-image:"../assets/icons/resources/telescope/",
+image:"../assets/icons/resources/telescope/telescope1.png",
 description:"Primary observation telescope used for planetary and lunar imaging.",
 specs:[
-"Aperture: 130mm",
-"Mount: Equatorial",
-"Use: Deep-sky observation"
+"Aperture: ",
+"Mount: ",
+"Use: "
 ]
 },
 {
 name:"Telescope II",
-image:"../assets/icons/resources/telescope/",
+image:"../assets/icons/resources/telescope/telescope2.png",
 description:"Portable observation telescope for quick deployment sessions.",
 specs:[
-"Aperture: 90mm",
-"Mount: Alt-Azimuth",
-"Use: Planetary tracking"
+"Aperture: ",
+"Mount: ",
+"Use: "
 ]
 },
 {
 name:"Astrophotography Camera",
-image:"../assets/icons/resources/camera/",
-description:"DSLR imaging system used for long-exposure astrophotography.",
+image:"../assets/icons/resources/camera/camera.png",
+description:"",
 specs:[
-"Sensor: APS-C",
-"Exposure: Manual control",
-"Use: Celestial imaging"
+"Sensor: ",
+"Exposure: ",
+"Use: "
 ]
 }
 ];
