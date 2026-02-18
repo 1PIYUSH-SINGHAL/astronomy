@@ -670,3 +670,17 @@ padding:.2rem .6rem;
     animation:none;
   }
 }
+
+.newsletter-message{
+  margin-top:1rem;
+  font-size:.85rem;
+  min-height:18px;
+}
+
+.newsletter-message.success{
+  color:#58a6ff;
+}
+
+.newsletter-message.error{
+  color:#ff5c5c;
+}
