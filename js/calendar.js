@@ -46,12 +46,28 @@ function updateEventLifecycle() {
 
 /* ================= WEATHER UPDATE (DEHRADUN) ================= */
 
+const WEATHER_TEST_MODE = false;
+// Change to true to simulate rain safely
+
 async function updateWeatherStatus() {
   try {
-    const res = await fetch(
-      "https://api.open-meteo.com/v1/forecast?latitude=30.3165&longitude=78.0322&daily=precipitation_probability_max&timezone=auto"
-    );
-    const data = await res.json();
+    let data;
+
+    if (WEATHER_TEST_MODE) {
+      // Fake weather data for testing
+      data = {
+        daily: {
+          time: Object.keys(events),
+          precipitation_probability_max: Object.keys(events).map(() => 90),
+        },
+      };
+    } else {
+      const res = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=30.3165&longitude=78.0322&daily=precipitation_probability_max&timezone=auto",
+      );
+      data = await res.json();
+    }
+
     const now = new Date();
 
     data.daily.time.forEach((date, i) => {
@@ -76,7 +92,7 @@ async function updateWeatherStatus() {
 
     renderCalendar();
   } catch (err) {
-    console.warn("Weather update failed");
+    console.warn("Weather update failed safely");
   }
 }
 
@@ -95,9 +111,7 @@ function renderCalendar() {
 
   monthLabel &&
     (monthLabel.textContent =
-      firstDay.toLocaleString("default", { month: "long" }) +
-      " " +
-      year);
+      firstDay.toLocaleString("default", { month: "long" }) + " " + year);
 
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const frag = document.createDocumentFragment();
@@ -199,10 +213,7 @@ function getNextUpcoming() {
     events[dateStr].forEach((e) => {
       const eventDate = new Date(dateStr + " " + (e.time || "00:00"));
 
-      if (
-        eventDate > now &&
-        (upcoming === null || eventDate < upcoming.date)
-      ) {
+      if (eventDate > now && (upcoming === null || eventDate < upcoming.date)) {
         upcoming = { date: eventDate, dateStr };
       }
     });
@@ -211,14 +222,16 @@ function getNextUpcoming() {
   return upcoming;
 }
 
-const next = getNextUpcoming();
+renderCalendar();
 
-if (next) {
-  currentDate = new Date(next.dateStr);
-  renderCalendar();
-  showEvents(next.dateStr);
-} else {
-  renderCalendar();
+const todayStr = formatDate(
+  today.getFullYear(),
+  today.getMonth(),
+  today.getDate(),
+);
+
+if (events[todayStr]) {
+  showEvents(todayStr);
 }
 
 /* ================= INITIAL WEATHER CHECK ================= */
